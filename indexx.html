@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Simples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+    .calc {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="calc">
+    <input type="text" id="expressao" placeholder="Digite a expressão">
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+  </div>
+
+  <script>
+    function calcular() {
+      const expressao = document.getElementById("expressao").value;
+      try {
+        const resultado = eval(expressao);
+        document.getElementById("resultado").innerText = "Resultado: " + resultado;
+      } catch (e) {
+        document.getElementById("resultado").innerText = "Expressão inválida!";
+      }
+    }
+  </script>
+</body>
+</html>
